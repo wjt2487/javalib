@@ -1,0 +1,23 @@
+#级别为DEBUG，三个输出端，分别为stdout,FILE,R
+log4j.logger.hello=DEBUG, stdout, FILE, R
+
+#stdout是在控制台输出
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%5p (%F:%L) - %m%n
+
+#保存在rolling_log_file.log日志中，appender是RollingFileAppender
+#需要注意的是File=F:/code/...，不要写成\
+log4j.appender.R=org.apache.log4j.RollingFileAppender
+log4j.appender.R.File=D:/Program Files/Apache Software Foundation/Tomcat 5.5/logs/log4j/rolling_log_file.log
+log4j.appender.R.MaxFileSize=100KB
+log4j.appender.R.MaxBackupIndex=1
+log4j.appender.R.layout=org.apache.log4j.PatternLayout
+log4j.appender.R.layout.ConversionPattern=%d{yyyy MMM dd HH:mm:ss} %-5p %c - %m%n
+
+#保存在log_file.log日志中，appender是FileAppender
+log4j.appender.FILE=org.apache.log4j.FileAppender
+log4j.appender.FILE.File=D:/Program Files/Apache Software Foundation/Tomcat 5.5/logs/log4j/log_file.log
+log4j.appender.FILE.Append=false
+log4j.appender.FILE.layout=org.apache.log4j.PatternLayout
+log4j.appender.FILE.layout.ConversionPattern=%d{yyyy MMM dd HH:mm:ss} %-5p %c - %m%n

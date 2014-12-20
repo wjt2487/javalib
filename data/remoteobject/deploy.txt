@@ -1,0 +1,17 @@
+
+RemoteObject 配置步骤：
+
+1，将 web.xml 中的内容拷贝至工程的 web.xml 中的 web-app 节点下。
+2，在工程中建立 WEB-INF/flex 目录，然后拷贝文件 remoting-conofig.xml , services-config.xml 至此目录下。
+3，services-config.xml 文件中的内容不需做任何修改，拷贝到 web.xml 中的内容也不需修改。
+4，每增加一个 RemoteObject ，只需在 remoting-conofig.xml 文件中添加一个 destination 节点即可。
+5，配置结束。
+
+
+其中：
+1，template 目录中的内容是 Adobe 官方提供的有关 BlazeDS 的详细配置信息，放在此处作为参考。
+2，目前只需要使用 remoting-conofig.xml , services-config.xml 这两个文件来实现 RemoteObject，
+其余是用作 Messaging 和 WebService 的相关配置。
+3，BlazeDS 用到的 jar 包已放入此工程中，在引用此类库的具体的工程中已不需再拷贝这些 jar 包。
+
+

@@ -1,0 +1,38 @@
+
+简明使用文档：
+
+package cn.skyclass.beans
+此包中含有几个主要的接口，以标识 bean 可以提供相应的特性。
+BaseBean: 这是最主要的类，这个类型就是默认实现了此包中定义的几个接口，主要提供主键属性，另外提供几个常用的方法；
+一般来说，大部分用户自定义的数据模型(有主键属性的)都是从这个类扩展，当然也可以自己去实现相应的接口或是重写方法。
+BaseExBean: 就是在 BaseBean 的基础上增加了 name 和 description 属性；
+如果数据模型中涉及这两个属性，就可以直接从这个类扩展。
+
+
+package cn.skyclass.business
+IEnumBase: 定义了枚举类型的基本接口，要求所有的枚举都要实现此接口。
+WebConfig: 用于读取自定义配置文件的信息的类。
+
+
+package cn.skyclass.hibernate
+此包中含有大量用于 hibernate 的基础操作。
+BaseBll: 实现最基本的对于一个数据对象的插入、修改、删除操作。
+BaseQuery: 提供常用的查询操作，如根据 id 来查找一个对象等。主要是查询出一个列表集合。
+TransactionBll: 提供基于 transaction 的对多个对象的插入、修改、删除的事务操作。
+
+
+package cn.skyclass.io
+此包中提供和磁盘文件相关的操作，主要有日志记录、文件读写、路径操作等。
+AppLogger: 提供简单的日志信息的记录。
+FileHelper: 提供对文件的读写操作。
+SitePathInfo: 提供站点的路径信息。
+
+
+package cn.skyclass.net
+提供和网络相关的类库。如 web service、jsp 等。
+
+
+package cn.skyclass.string
+提供和字符串操作相关的类库。如字符串的加密、格式化、类型转换等。
+
+

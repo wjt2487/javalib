@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-config>
+	<appSettings>
+		<!-- 文件上传路径，目前必须定位到网站根目录下的 data 目录，默认路径是网站根目录下的 data 目录 -->
+		<!-- 示例：{...Tomcat 5.5}\webapps\web-site-context-path\data\ -->
+		<add key="UploadPath" value="" />
+
+		<!-- 上传文件时使用的临时路径，可以随时任意指定任意目录，默认路径是上传路径下的 __temp 目录 -->
+		<!-- 示例：{...Tomcat 5.5}\webapps\web-site-context-path\data\__temp\ -->
+		<add key="UploadTempPath" value="" />
+
+		<!-- 多媒体编辑器的访问路径 -->
+		<add key="HtmlEditorUrl" value="/page/htmleditor.jsp" />
+
+		<!-- 多媒体编辑器存放文件的访问地址 -->
+		<add key="HtmlEditorUploadUrl" value="/htmleditor/upload-file/" />
+
+		<!-- 多媒体编辑器存放文件的路径，默认路径是 HtmlEditorUploadUrl 指向的物理路径 -->
+		<!-- 示例：{...Tomcat 5.5}\webapps\htmleditor\upload-file\ -->
+		<add key="HtmlEditorUploadPath" value="" />
+	</appSettings>
+	<otherInfo>
+		<node name="name1" />
+		<node name="name2" />
+	</otherInfo>
+</web-config>

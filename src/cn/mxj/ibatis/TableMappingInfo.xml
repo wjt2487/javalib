@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="TableNamespace">
+	<typeAlias alias="beanAlias" type="cn.skyclass.beans.BaseExBean" />
+
+	<resultMap id="bean-result" class="beanAlias">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="description" column="description" />
+	</resultMap>
+
+	<select id="getBeanById" resultMap="bean-result">
+		select * from table_name where id = #id#
+	</select>
+
+	<insert id="insertBean" parameterClass="beanAlias">
+		insert into table_name(name, description) values(#name#,
+		#description#)
+		<selectKey resultClass="java.lang.Integer" keyProperty="id">
+			select last_insert_id() as id
+		</selectKey>
+	</insert>
+
+	<update id="updateBean" parameterClass="beanAlias">
+		update table_name set name = #name#, description = #description#
+		where id = #id#
+	</update>
+
+	<delete id="deleteBeanById" parameterClass="java.lang.Integer">
+		delete from table_name where id = #id#
+	</delete>
+</sqlMap>

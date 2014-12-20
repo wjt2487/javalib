@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service"
+	class="flex.messaging.services.RemotingService">
+
+	<adapters>
+		<adapter-definition id="java-object"
+			class="flex.messaging.services.remoting.adapters.JavaAdapter"
+			default="true" />
+	</adapters>
+
+	<default-channels>
+		<channel ref="my-amf" />
+		<channel ref="my-http" />
+	</default-channels>
+
+	<!-- A simple destination example. -->
+	<!-- source is the Java class name of the destination -->
+	<destination id="sample">
+		<properties>
+			<source>my.company.SampleService</source>
+		</properties>
+	</destination>
+
+</service>
